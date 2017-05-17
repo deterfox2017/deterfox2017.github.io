@@ -5,7 +5,7 @@ var sizes = new Array();
 var start;
 var end;
 var repeat = 50;
-var current = 4;
+var current = 0;
 var s;
 
 function imageDisplay()
@@ -50,7 +50,7 @@ function imageDecode()
 {
     console.log("image decode");
     timesofsp = new Array();
-    doImageDecode(1);
+    doImageDecode(5);
 }
 
 function sortNumber(a,b) {
