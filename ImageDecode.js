@@ -5,7 +5,7 @@ var sizes = new Array();
 var start;
 var end;
 var repeat = 50;
-var current = 0;
+var current = 4;
 var s;
 
 function imageDisplay()
