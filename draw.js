@@ -12,9 +12,9 @@ function draw(size,array,name) {
     data.addRows(array);
 
     var options = {
-        title: 'Time Consumption for Preocessing Different Size of Files',
-        vAxis: {title:"Time"},
-        hAxis: {title:"File Size"},
+        title: 'Script Parsing Time for Files with Different Sizes',
+        vAxis: {title:"Time (ms)"},
+        hAxis: {title:"File Size (MB)"},
         width: 900,
         height: 500
     };
