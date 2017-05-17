@@ -31,7 +31,7 @@ function doScriptParse(index)
             doScriptParse(index);
         }else{
             timeofsp.sort(sortNumber);
-            timesofsp.push([index,timeofsp[Math.floor(timeofsp.length/2)]]);
+            timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
             timeofsp = [];
             sizes.push(index);
             current = 0;
