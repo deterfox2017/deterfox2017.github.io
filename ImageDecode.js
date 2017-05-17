@@ -36,7 +36,7 @@ function doImageDecode(index)
             //var sum = timeofsp.reduce(function(a, b) { return a + b; });
             //var avg = sum / timeofsp.length;
             //timesofsp.push([index,avg]);
-            timesofsp.push([index,timeofsp[Math.floor(timeofsp.length/2)]]);
+            timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
             sizes.push(index);
             current = 0;
             timeofsp = [];
