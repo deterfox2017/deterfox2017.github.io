@@ -1,10 +1,10 @@
 var timesofsp = new Array();
 var timeofsp = [];
-var maxsize = 5;
+var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 100;
+var repeat = 50;
 var current = 0;
 var s;
 
