@@ -9,7 +9,7 @@ var current = 0;
 
 function scriptDisplay()
 {
-    draw(sizes,timesofsp,"script");
+    draw(sizes,timesofsp,'Script Parsing Time for Files with Different Sizes');
 }
 
 function doScriptParse(index)
