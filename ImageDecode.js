@@ -21,7 +21,7 @@ function doImageDecode(index)
     s.src = "./" + index + "e5.png";
     s.onerror = function(){
         end = performance.now();
-        console.log(end - start);
+        console.log(current);
         s.innerHTML = "";
         /*if(current < 10){
             current++;
