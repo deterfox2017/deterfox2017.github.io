@@ -10,7 +10,7 @@ var s;
 
 function imageDisplay()
 {
-    draw(sizes,timesofsp,"image");
+    draw(sizes,timesofsp,'Image Decoding Time for Files with Different Sizes');
 }
 
 function doImageDecode(index)
