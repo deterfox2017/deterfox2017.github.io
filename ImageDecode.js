@@ -23,11 +23,11 @@ function doImageDecode(index)
         end = performance.now();
         console.log(end - start);
         s.innerHTML = "";
-        if(current < 10){
+        /*if(current < 10){
             current++;
             doImageDecode(index);
-        }
-        else if(current < repeat){
+        }*/
+        if(current < repeat){
             current++;
             timeofsp.push(end-start);
             doImageDecode(index);
