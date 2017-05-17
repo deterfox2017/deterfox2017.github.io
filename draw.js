@@ -1,18 +1,18 @@
 google.charts.load('current', {packages: ['corechart', 'line', 'table']});
 //google.charts.setOnLoadCallback(drawBasic);
 
-function draw(size,array,name) {
+function draw(size,array,my_title) {
     console.log(array);
     console.log(size);
     var data = new google.visualization.DataTable();
 
     data.addColumn('number', 'size');
-    data.addColumn('number', name);
+    data.addColumn('number', 'time');
 
     data.addRows(array);
 
     var options = {
-        title: 'Script Parsing Time for Files with Different Sizes',
+        title: my_title,
         vAxis: {title:"Time (ms)"},
         hAxis: {title:"File Size (MB)"},
         width: 900,
