@@ -1,11 +1,12 @@
 var timesofsp = new Array();
-var timeofsp = new Array();
+var timeofsp = [];
 var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 15;
+var repeat = 65;
 var current = 0;
+var s;
 
 function imageDisplay()
 {
@@ -14,13 +15,12 @@ function imageDisplay()
 
 function doImageDecode(index)
 {	
-    var s = document.createElement('img');
+    s = document.createElement('img');
     start = performance.now();
     document.body.appendChild(s);
     s.src = "./" + index + "e5.png";
-    window.onerror = function(){
+    s.onerror = function(){
         end = performance.now();
-        console.log(end - start);
         if(current < 5){
             current++;
             doImageDecode(index);
@@ -32,9 +32,9 @@ function doImageDecode(index)
         }else{
             timeofsp.sort(sortNumber);
             timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
-            timeofsp = [];
             sizes.push(index);
             current = 0;
+            timeofsp = [];
             imageDisplay();
             if(index < maxsize)doImageDecode(index+1);
         }
