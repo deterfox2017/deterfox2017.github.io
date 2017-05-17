@@ -21,7 +21,6 @@ function doImageDecode(index)
     s.src = "./" + index + "e5.png";
     s.onerror = function(){
         end = performance.now();
-        console.log(current);
         s.innerHTML = "";
         if(current < 10){
             current++;
@@ -37,6 +36,7 @@ function doImageDecode(index)
             //var avg = sum / timeofsp.length;
             //timesofsp.push([index,avg]);
             timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            console.log(timesofsp);
             sizes.push(index*1.2);
             current = 0;
             timeofsp = [];
@@ -48,7 +48,6 @@ function doImageDecode(index)
 
 function imageDecode()
 {
-    console.log("image decode");
     timesofsp = new Array();
     doImageDecode(5);
 }
