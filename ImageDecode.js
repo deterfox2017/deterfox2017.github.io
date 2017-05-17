@@ -4,7 +4,7 @@ var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 65;
+var repeat = 95;
 var current = 0;
 var s;
 
@@ -21,7 +21,7 @@ function doImageDecode(index)
     s.src = "./" + index + "e5.png";
     s.onerror = function(){
         end = performance.now();
-        if(current < 5){
+        if(current < 15){
             current++;
             doImageDecode(index);
         }
@@ -30,8 +30,11 @@ function doImageDecode(index)
             timeofsp.push(end-start);
             doImageDecode(index);
         }else{
-            timeofsp.sort(sortNumber);
-            timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            //timeofsp.sort(sortNumber);
+            //timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            var sum = timeofsp.reduce(function(a, b) { return a + b; });
+            var avg = sum / timeofsp.length;
+            timesofsp.push([index*1.2,avg);
             sizes.push(index);
             current = 0;
             timeofsp = [];
