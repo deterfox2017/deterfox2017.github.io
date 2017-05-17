@@ -12,7 +12,7 @@ function imageDisplay()
     draw(sizes,timesofsp,"image");
 }
 
-function doImageParse(index)
+function doImageDecode(index)
 {	
     var s = document.createElement('img');
     start = performance.now();
@@ -23,12 +23,12 @@ function doImageParse(index)
         console.log(end - start);
         if(current < 5){
             current++;
-            doImageParse(index);
+            doImageDecode(index);
         }
         else if(current < repeat){
             current++;
             timeofsp.push(end-start);
-            doImageParse(index);
+            doImageDecode(index);
         }else{
             timeofsp.sort(sortNumber);
             timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
@@ -36,15 +36,15 @@ function doImageParse(index)
             sizes.push(index);
             current = 0;
             imageDisplay();
-            if(index < maxsize)doImageParse(index+1);
+            if(index < maxsize)doImageDecode(index+1);
         }
     };
 }
 
-function imageParse()
+function imageDecode()
 {
     timesofsp = new Array();
-    doImageParse(1);
+    doImageDecode(1);
 }
 
 function sortNumber(a,b) {
