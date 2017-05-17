@@ -1,55 +1,50 @@
 var timesofsp = new Array();
-var timeofsp = [];
+var timeofsp = new Array();
 var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 100;
+var repeat = 15;
 var current = 0;
-var s;
 
 function imageDisplay()
 {
     draw(sizes,timesofsp,"image");
 }
 
-function doImageDecode(index)
+function doImageParse(index)
 {	
-    s = document.createElement('img');
+    var s = document.createElement('img');
     start = performance.now();
     document.body.appendChild(s);
     s.src = "./" + index + "e5.png";
-    s.onerror = function(){
+    window.onerror = function(){
         end = performance.now();
-        s.innerHTML = "";
-        if(current < 10){
+        console.log(end - start);
+        if(current < 5){
             current++;
-            doImageDecode(index);
+            doImageParse(index);
         }
-        if(current < repeat){
+        else if(current < repeat){
             current++;
             timeofsp.push(end-start);
-            doImageDecode(index);
+            doImageParse(index);
         }else{
             timeofsp.sort(sortNumber);
-            //var sum = timeofsp.reduce(function(a, b) { return a + b; });
-            //var avg = sum / timeofsp.length;
-            //timesofsp.push([index,avg]);
             timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
-            console.log(timesofsp);
-            sizes.push(index*1.2);
-            current = 0;
             timeofsp = [];
+            sizes.push(index);
+            current = 0;
             imageDisplay();
-            if(index < maxsize)doImageDecode(index+1);
+            if(index < maxsize)doImageParse(index+1);
         }
     };
 }
 
-function imageDecode()
+function imageParse()
 {
     timesofsp = new Array();
-    doImageDecode(5);
+    doImageParse(1);
 }
 
 function sortNumber(a,b) {
