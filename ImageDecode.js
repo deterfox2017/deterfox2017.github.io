@@ -47,7 +47,7 @@ function doImageDecode(index)
 function imageDecode()
 {
     timesofsp = new Array();
-    doImageDecode(1);
+    doImageDecode(4);
 }
 
 function sortNumber(a,b) {
