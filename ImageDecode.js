@@ -4,7 +4,7 @@ var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 50;
+var repeat = 100;
 var current = 0;
 var s;
 
