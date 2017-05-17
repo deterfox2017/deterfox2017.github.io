@@ -1,6 +1,6 @@
 var timesofsp = new Array();
 var timeofsp = [];
-var maxsize = 9;
+var maxsize = 5;
 var sizes = new Array();
 var start;
 var end;
