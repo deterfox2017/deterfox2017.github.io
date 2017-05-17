@@ -4,7 +4,7 @@ var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 65;
+var repeat = 100;
 var current = 0;
 var s;
 
@@ -23,7 +23,7 @@ function doImageDecode(index)
         end = performance.now();
         console.log(end - start);
         s.innerHTML = "";
-        if(current < 5){
+        if(current < 10){
             current++;
             doImageDecode(index);
         }
