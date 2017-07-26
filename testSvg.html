@@ -44,8 +44,10 @@ function finish(avg){
         interval = 0;
         var sum = times.reduce(function(a, b) { return a+b; });
         var average = -sum / times.length;
-        console.log(average);
-        data.push([resolution[currentPic],average]);
+        times.sort();
+        mid = -times[Math.round((times.length - 1) / 2)];
+        console.log(average,mid);
+        data.push([resolution[currentPic],mid]);
         times = [];
 
         if(currentPic == picNames.length-1){

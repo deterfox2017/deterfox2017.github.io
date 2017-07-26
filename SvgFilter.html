@@ -47,8 +47,11 @@ function loop(t){
     else{
         var sum = times.reduce(function(a, b) { return a + b; });
         avg = sum / times.length;
-        //console.log(avg);
-        parent.finish(avg);
+        times.sort();
+        mid = times[Math.round((times.length - 1) / 2)];
+        console.log(avg,mid);
+        //parent.finish(avg);
+        parent.finish(mid);
         /*if(interval < 2){
           interval++;
           times = [];
