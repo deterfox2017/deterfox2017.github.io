@@ -110,22 +110,26 @@ jQuery(function($) {
 		}
 	});
 
-  //add fingerprint iframe
-  $("#fingerprint-button").click(function() {
-    if ($("#fingerprint-button").text() != "Details") {
-      $("#fingerprint-button").html("Running");
-      $("#fingerprint-button").prop('disabled', true);
-      $("#fingerprint-iframe").attr("src", "./fingerprint/index.html");
-    } else {
-      $("#fingerprint-result").addClass("hide");
-      $("#fingerprint-iframe").removeClass("hide");
-      $("#fingerprint-iframe").attr("width", "1024");
-      $("#fingerprint-iframe").attr("height", "2048");
+function test(url){
+    display = document.getElementById('attack-iframe');
+    display.height = 500;
+    display.width = 900;
+    if(url == 'testSvg.html'){
+        display.height = 2000;
+        display.width = 3000;
     }
-    $('html, body').animate({
-      scrollTop: $("#fingerprint").offset().top - 5
-    }, 1000);
-  });
+    display.src = url;
 
+}
+
+  $("#svg-test-button").click(function() {
+	test('./js/attack/testSvg.html');
+  });
+  $("#script-test-button").click(function() {
+	test('./js/attack/ScriptParse.html');
+  });
+  $("#image-test-button").click(function() {
+	test('./js/attack/ImageDecode.html');
+  });
 });
 

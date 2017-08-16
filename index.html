@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-90435344-1', 'auto');
-    ga('send', 'pageview');
-    
-</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Unique Machine</title>
+  <title>Deterministic Browser</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/animate.min.css" rel="stylesheet"> 
   <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -24,7 +14,7 @@
   <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
 
-  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="shortcut icon" href="images/clock.ico">
 </head><!--/head-->
 
 <body>
@@ -40,11 +30,12 @@
           background-attachment: fixed;
           background-position: center; ">
             <div class="caption">
-              <h1 class="animated fadeInLeftBig">Unique<span>Machine</span></h1>
-              <p class="animated fadeInRightBig">is my computer unique?(Developing, not fully supported)</p>
-              <a data-scroll class="btn btn-start animated fadeInUpBig" href="#fingerprint">Get My Fingerprint</a>
+              <h1 class="animated fadeInLeftBig">Deter<span>Fox</span></h1>
+              <p class="animated fadeInRightBig">make your browser deterministic(Developing, not fully supported)</p>
+              <a data-scroll class="btn btn-start animated fadeInUpBig" href="#introduction">Introduction</a>
+              <a data-scroll class="btn btn-start animated fadeInUpBig" href="#demo">Demo</a>
               <a data-scroll class="btn btn-start animated fadeInUpBig" href="#about_us">About us</a>
-              <a data-scroll class="btn btn-start animated fadeInUpBig" href="https://github.com/Song-Li/cross_browser">Source code</a>
+              <a data-scroll class="btn btn-start animated fadeInUpBig" href="https://github.com/nkdxczh/gecko-dev/tree/deterfox">Source code</a>
               <a data-scroll class="btn btn-start animated fadeInUpBig" href="https://drive.google.com/file/d/0B4s900Byvv1ibW5uc1NiU2g3R3c/view?usp=sharing">Paper</a>
             </div>
           </div>
@@ -68,29 +59,49 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">                 
             <li class="scroll"><a href="#home">Home</a></li>
-            <li class="scroll"><a href="#fingerprint">Fingerprint</a></li> 
+            <li class="scroll"><a href="#introduction">Introduction</a></li> 
+            <li class="scroll"><a href="#demo">Demo</a></li> 
             <li class="scroll"><a href="#about_us">About Us</a></li>                     
-            <li class="scroll"><a href="https://github.com/Song-Li/cross_browser">Source Code</a></li>
+            <li class="scroll"><a href="https://github.com/nkdxczh/gecko-dev/tree/deterfox">Source Code</a></li>
             <li class="scroll"><a href="https://drive.google.com/file/d/0B4s900Byvv1ibW5uc1NiU2g3R3c/view?usp=sharing">Paper</a></li>
           </ul>
         </div>
       </div>
     </div><!--/#main-nav-->
   </header><!--/#home-->
-  <section id="fingerprint">
+  <section id="introduction">
     <div class="container">
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2>Get My Fingerprint</h2>
-            <p>By Fingerprinting, you can get the UNIQUE fingerprint of your browser or computer. It based on the basic browser information, GPU, fonts and so on</p>
+            <h2>Introduction</h2>
+            <p align="left" style="font-size:20px">Timing attacks have been a continuous threat to users’ privacy in
+modern browsers. To mitigate such attacks, existing approaches,
+such as Tor Browser and Fermata, add jitters to the browser clock so
+that an attacker cannot accurately measure an event. However, such
+defenses only raise the bar for an attacker but do not fundamentally
+mitigate timing attacks, i.e., it just takes longer than previous to
+launch a timing attack.
+In this paper, we propose a novel approach, called deterministic
+browser, which can provably prevent timing attacks in modern
+browsers. Borrowing from Physics, we introduce several concepts,
+such as an observer and a reference frame. Specifically, a snippet
+of JavaScript, i.e., an observer in JavaScript reference frame, will
+always obtain the same, fixed timing information so that timing
+attacks are prevented; at contrast, a user, i.e., an oracle observer,
+will perceive the JavaScript differently and do not experience the
+performance slowdown. We have implemented a prototype called
+DeterFox and our evaluation shows that the prototype can defend
+against browser-related timing attacks.
+
+Our implementation is open-source and available at this reposi-
+tory (https://github.com/deterfox2017/DeterFox). We also provide a
+
+running instance of DeterFox at a remote server (demo.deterfox.com),
+accessible via Virtual Network Computing (VNC) protocol with
+password: ccs_2017 and port number: 5901.</p>
           </div>
         </div> 
-        <div class = "row">
-          <div class = "text-center">
-            <button class="btn btn-lg btn-primary" id = "fingerprint-button">Get My Fingerprint</button>
-          </div>
-        </div>
         <div class = "row text-center" id = "status">
         </div>
         <div class = "row">
@@ -106,6 +117,32 @@
           <div class = "row">
             <h3>Computer fingerprint (Developing, not finished)</h3>
             <p id = "computer_fingerprint"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#services-->
+  <section id="demo">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-center col-sm-8 col-sm-offset-2">
+            <h2>Demo</h2>
+            <p>Check if your browser could defend time channel attack</p>
+          </div>
+        </div> 
+        <div class = "row">
+          <div class = "text-center">
+            <button class="btn btn-lg btn-primary" id = "svg-test-button">SVG Filter Test</button>
+            <button class="btn btn-lg btn-primary" id = "script-test-button">Script Parsing Test</button>
+            <button class="btn btn-lg btn-primary" id = "image-test-button">Image Decoding Test</button>
+          </div>
+        </div>
+        <div class = "row text-center" id = "status">
+        </div>
+        <div class = "row">
+          <div class = "text-center" id="iframe-container">
+            <iframe width="1000" height="1800" frameBorder="0"  scrolling = "no" id="attack-iframe"></iframe>
           </div>
         </div>
       </div>
@@ -153,16 +190,59 @@
                 <img class="member-image" src="images/team/songli.jpg" alt="">
               </div>
               <div class="member-info">
-                <h3>Song Li</h3>
+                <h3>Zhanhao Chen</h3>
                 <h4>Student of Lehigh University</h4>
                 <p>Website Developer and Maintainer</p>
-                <p>Report bug to me (lisong1013@gmail.com)</p>
+                <p>Report bug to me (lhdxczh@gmail.com)</p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="github" href="https://github.com/nkdxczh"><i class="fa fa-github"></i></a></li>
+                  <li><a class="email" href="mailto:lhdxczh@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                  <li><a class="website" href="http://www.zhanhao.org/"><i class="fa fa-globe"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+	</div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
+              <div class="member-info">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <div class="member-image">
+                <img class="member-image" src="images/team/songli.jpg" alt="">
+              </div>
+              <div class="member-info">
+                <h3>Song Li</h3>
+                <h4>Student of Lehigh University</h4>
               </div>
               <div class="social-icons">
                 <ul>
                   <li><a class="github" href="https://github.com/Song-Li"><i class="fa fa-github"></i></a></li>
                   <li><a class="email" href="mailto:lisong1013@gmail.com"><i class="fa fa-envelope"></i></a></li>
                   <li><a class="website" href="http://www.songli.us/"><i class="fa fa-globe"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
+              <div class="member-image">
+                <img class="member-image" src="images/team/shujiang.png" alt="">
+              </div>
+              <div class="member-info">
+                <h3>Shujiang Wu</h3>
+                <h4>Student of Lehigh University</h4>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li><a class="github" href="https://github.com/buaasniper"><i class="fa fa-github"></i></a></li>
+                  <li><a class="email" href="mailto:shw316@lehigh.edu"><i class="fa fa-envelope"></i></a></li>
                 </ul>
               </div>
             </div>
