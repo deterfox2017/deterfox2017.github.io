@@ -123,13 +123,13 @@ function test(url){
 }
 
   $("#svg-test-button").click(function() {
-	test('./js/attack/testSvg.html');
+	test('./js/attacks/testSvg.html');
   });
   $("#script-test-button").click(function() {
-	test('./js/attack/ScriptParse.html');
+	test('./js/attacks/ScriptParse.html');
   });
   $("#image-test-button").click(function() {
-	test('./js/attack/ImageDecode.html');
+	test('./js/attacks/ImageDecode.html');
   });
 });
 
