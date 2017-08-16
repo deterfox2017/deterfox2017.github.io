@@ -114,9 +114,9 @@ function test(url){
     display = document.getElementById('attack-iframe');
     display.height = 500;
     display.width = 900;
-    if(url == 'testSvg.html'){
-        display.height = 2000;
-        display.width = 3000;
+    if(url == './js/attacks/testSvg.html'){
+        display.height = 1080;
+        display.width = 1920;
     }
     display.src = url;
 
