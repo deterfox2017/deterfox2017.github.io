@@ -112,8 +112,8 @@ jQuery(function($) {
 
 function test(url){
     display = document.getElementById('attack-iframe');
-    display.height = 500;
-    display.width = 900;
+    display.height = 1080;
+    display.width = 1920;
     if(url == './js/attacks/testSvg.html'){
         display.height = 1080;
         display.width = 1920;
