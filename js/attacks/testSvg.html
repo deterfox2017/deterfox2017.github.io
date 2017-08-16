@@ -15,12 +15,11 @@ var interval = 0;
 var pics = 3;
 var currentPic = 0;
 var picNames = ['noise-big','noise-vsmall'];
-var resolution = ['1920*1080', '10*10']
 
 var options = {
-    title: 'SVG Filtering Times for Pictures with Different Resolutions',
-    vAxis: {title:"Image Resolution"},
-    hAxis: {title:"Processing Time (ms)"},
+    title: 'SVG Filtering Speed for Different Pictures',
+    vAxis: {title:"File"},
+    hAxis: {title:"Process Time"},
     width: 900,
     height: 500,
     bar: {groupWidth: "95%"},
@@ -44,10 +43,8 @@ function finish(avg){
         interval = 0;
         var sum = times.reduce(function(a, b) { return a+b; });
         var average = -sum / times.length;
-        times.sort();
-        mid = -times[Math.round((times.length - 1) / 2)];
-        console.log(average,mid);
-        data.push([resolution[currentPic],mid]);
+        console.log(average);
+        data.push([picNames[currentPic],average]);
         times = [];
 
         if(currentPic == picNames.length-1){
