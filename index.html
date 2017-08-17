@@ -75,31 +75,13 @@
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
             <h2>Introduction</h2>
-            <p align="left" style="font-size:20px">Timing attacks have been a continuous threat to users’ privacy in
-modern browsers. To mitigate such attacks, existing approaches,
-such as Tor Browser and Fermata, add jitters to the browser clock so
-that an attacker cannot accurately measure an event. However, such
-defenses only raise the bar for an attacker but do not fundamentally
-mitigate timing attacks, i.e., it just takes longer than previous to
-launch a timing attack.
-In this paper, we propose a novel approach, called deterministic
-browser, which can provably prevent timing attacks in modern
-browsers. Borrowing from Physics, we introduce several concepts,
-such as an observer and a reference frame. Specifically, a snippet
-of JavaScript, i.e., an observer in JavaScript reference frame, will
-always obtain the same, fixed timing information so that timing
-attacks are prevented; at contrast, a user, i.e., an oracle observer,
-will perceive the JavaScript differently and do not experience the
-performance slowdown. We have implemented a prototype called
-DeterFox and our evaluation shows that the prototype can defend
+            <p align="left" width="2000"  style="font-size:20px">
+Timing attacks have been a continuous threat to users’ privacy in modern browsers. To mitigate such attacks, existing approaches, such as Tor Browser and Fermata, add jitters to the browser clock so that an attacker cannot accurately measure an event. However, such defenses only raise the bar for an attacker but do not fundamentally mitigate timing attacks, i.e., it just takes longer than previous to launch a timing attack.
+</p>
+            <p align="left" width="2000"  style="font-size:20px">
+In this project, we propose a novel approach, called deterministic browser, which can provably prevent timing attacks in modern browsers. Borrowing from Physics, we introduce several concepts, such as an observer and a reference frame. Specifically, a snippet of JavaScript, i.e., an observer in JavaScript reference frame, will always obtain the same, fixed timing information so that timing attacks are prevented; at contrast, a user, i.e., an oracle observer, will perceive the JavaScript differently and do not experience the performance slowdown. We have implemented a prototype called DeterFox and our evaluation shows that the prototype can defend
 against browser-related timing attacks.
-
-Our implementation is open-source and available at this reposi-
-tory (https://github.com/deterfox2017/DeterFox). We also provide a
-
-running instance of DeterFox at a remote server (demo.deterfox.com),
-accessible via Virtual Network Computing (VNC) protocol with
-password: ccs_2017 and port number: 5901.</p>
+</p>
           </div>
         </div> 
         <div class = "row text-center" id = "status">
@@ -127,7 +109,7 @@ password: ccs_2017 and port number: 5901.</p>
       <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="row">
           <div class="text-center col-sm-8 col-sm-offset-2">
-            <h2>Demo</h2>
+            <h2>Attack Demo</h2>
             <p>Check if your browser could defend time channel attack</p>
           </div>
         </div> 
@@ -142,7 +124,19 @@ password: ccs_2017 and port number: 5901.</p>
         </div>
         <div class = "row">
           <div class = "text-center" id="iframe-container">
-            <iframe width="1000" height="1800" frameBorder="0"  scrolling = "no" id="attack-iframe"></iframe>
+            <iframe frameBorder="0"  scrolling = "no" id="attack-iframe"></iframe>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center col-sm-8 col-sm-offset-2">
+            <h2>Defend Demo</h2>
+            <p>Check the attack performance on Firefox and Deterfox</p>
+          </div>
+        </div> 
+        <div class = "row">
+          <div class = "text-center" id="iframe-container">
+            <iframe width="720" height="576" src="https://www.youtube.com/embed/ej90pLMkL5g" frameBorder="0" frameborder="0"></iframe>
+            <iframe width="720" height="576" src="https://www.youtube.com/embed/j-2d9ylV2_0" frameBorder="0" frameborder="0"></iframe>
           </div>
         </div>
       </div>
@@ -187,7 +181,7 @@ password: ccs_2017 and port number: 5901.</p>
           <div class="col-sm-3">
             <div class="team-member wow flipInY" data-wow-duration="1000ms" data-wow-delay="500ms">
               <div class="member-image">
-                <img class="member-image" src="images/team/songli.jpg" alt="">
+                <img class="member-image" src="images/team/zhanhao.jpg" alt="">
               </div>
               <div class="member-info">
                 <h3>Zhanhao Chen</h3>
