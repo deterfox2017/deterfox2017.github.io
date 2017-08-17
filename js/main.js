@@ -113,7 +113,7 @@ jQuery(function($) {
 function test(url){
     display = document.getElementById('attack-iframe');
     display.height = 720;
-    display.width = 1280;
+    display.width = 900;
     display.src = url;
 
 }
