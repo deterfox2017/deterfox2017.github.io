@@ -17,7 +17,6 @@ function doImageDecode(index)
 {	
     s = document.createElement('img');
     start = performance.now();
-    document.body.appendChild(s);
     s.src = "./" + index + "e5.png";
     s.onerror = function(){
         end = performance.now();
@@ -42,6 +41,7 @@ function doImageDecode(index)
             if(index < maxsize)doImageDecode(index+1);
         }
     };
+    document.body.appendChild(s);
 }
 
 function imageDecode()
