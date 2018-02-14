@@ -3,7 +3,7 @@ jQuery(function($) {
   var eventer = window[eventMethod];
   var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
   
-  eventer(messageEvent,function(e) {
+  /*eventer(messageEvent,function(e) {
     $("#fingerprint-iframe").addClass("hide");
     $("#fingerprint-iframe").attr("src", "./fingerprint/details.html?" + e.data['single']);
     $("#fingerprint-button").prop('disabled', false);
@@ -11,7 +11,7 @@ jQuery(function($) {
     $("#fingerprint_result").removeClass("hide");
     $("#browser_fingerprint").html(e.data['single']);
     $("#computer_fingerprint").html(e.data['cross']);
-  },false);
+  },false);*/
 
 
   //Preloader
@@ -21,7 +21,7 @@ jQuery(function($) {
   });
 
   //#main-slider
-  var slideHeight = $(window).height();
+  var slideHeight = window.innerHeight;
   $('#home-slider .item').css('height',slideHeight);
 
 	$(window).resize(function(){'use strict',
