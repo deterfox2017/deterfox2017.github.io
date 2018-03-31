@@ -35,7 +35,7 @@ function doScriptParse(index)
             console.log(timeofsp);
             
             var sum = 0;
-            for( var i = 0; i < 10; i++ ){
+            for( var i = 2; i < 12; i++ ){
                 sum += timeofsp[i]; //don't forget to add the base
             }
 
