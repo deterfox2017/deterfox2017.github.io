@@ -33,11 +33,11 @@ function doScriptParse(index)
             timeofsp.sort(sortNumber);
             
             var sum = 0;
-            for( var i = 0; i < elmt.length; i++ ){
-                sum += parseInt( elmt[i], 10 ); //don't forget to add the base
+            for( var i = 0; i < timeofsp.length; i++ ){
+                sum += parseInt( timeofsp[i], 10 ); //don't forget to add the base
             }
 
-            var avg = sum/elmt.length;
+            var avg = sum/timeofsp.length;
             
             //timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
             timesofsp.push([index*1.2,avg]);
