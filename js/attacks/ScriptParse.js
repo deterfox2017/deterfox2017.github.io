@@ -4,7 +4,7 @@ var maxsize = 9;
 var sizes = new Array();
 var start;
 var end;
-var repeat = 15;
+var repeat = 25;
 var current = 0;
 
 function scriptDisplay()
