@@ -32,15 +32,17 @@ function doScriptParse(index)
         }else{
             timeofsp.sort(sortNumber);
             
+            console.log(timeofsp);
+            
             var sum = 0;
-            for( var i = 0; i < timeofsp.length; i++ ){
+            for( var i = 5; i < 20; i++ ){
                 sum += timeofsp[i]; //don't forget to add the base
             }
 
-            var avg = sum/timeofsp.length;
+            var avg = sum/(20 - 5);
             
-            timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
-            //timesofsp.push([index*1.2,avg]);
+            //timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            timesofsp.push([index*1.2,avg]);
             timeofsp = [];
             sizes.push(index);
             current = 0;
