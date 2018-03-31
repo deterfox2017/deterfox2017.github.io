@@ -35,11 +35,11 @@ function doScriptParse(index)
             console.log(timeofsp);
             
             var sum = 0;
-            for( var i = 5; i < 20; i++ ){
+            for( var i = 10; i < 20; i++ ){
                 sum += timeofsp[i]; //don't forget to add the base
             }
 
-            var avg = sum/(20 - 5);
+            var avg = sum/(20 - 10);
             
             //timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
             timesofsp.push([index*1.2,avg]);
