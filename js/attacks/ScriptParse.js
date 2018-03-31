@@ -34,7 +34,7 @@ function doScriptParse(index)
             
             var sum = 0;
             for( var i = 0; i < timeofsp.length; i++ ){
-                sum += parseInt( timeofsp[i], 10 ); //don't forget to add the base
+                sum += timeofsp[i]; //don't forget to add the base
             }
 
             var avg = sum/timeofsp.length;
