@@ -39,8 +39,8 @@ function doScriptParse(index)
 
             var avg = sum/timeofsp.length;
             
-            //timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
-            timesofsp.push([index*1.2,avg]);
+            timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            //timesofsp.push([index*1.2,avg]);
             timeofsp = [];
             sizes.push(index);
             current = 0;
