@@ -7,25 +7,15 @@ var end;
 var repeat = 15;
 var current = 0;
 
-function nextedge(){
-    start = performance.now();
-    stop = start;
-    count = 0;
-    while(start == stop){
-        stop = performance.now();
-        count++;
-    }
-    return [count,start,stop];
-}
+var terminate = false;
 
-var MAX = 0;
-for(i = 0; i < 100; i++){
-    nextedge();
-    [exp,pre,start] = nextedge();
-    MAX = Math.max(exp, MAX);
+var ticks = 0;
+function tick(){
+    if(terminate)return;
+    ticks++;
+    setTimeout(tick,1);
 }
-exp = MAX;
-grain = start - pre;
+setTimeout(tick,1);
 
 function scriptDisplay()
 {
@@ -36,18 +26,14 @@ function doScriptParse(index)
 {	
     var s = document.createElement('script');
 
-    nextedge();
-    [exp1,pre,start] = nextedge();
-    //start = performance.now();
+    start = ticks;
 
     document.body.appendChild(s);
     s.src = "./" + index + "e5.js";
     window.onerror = function(){
-        //end = performance.now();
-        [remain,stop,post] = nextedge();
-        duration = (stop-start)+((exp-remain)/exp)*grain;
-
-        //console.log(start, end);
+        end = ticks;
+        duration = end - start;
+        console.log(start, end);
         //console.log(end - start);
         if(current < 5){
             current++;
@@ -65,6 +51,7 @@ function doScriptParse(index)
             current = 0;
             scriptDisplay();
             if(index < maxsize)doScriptParse(index+1);
+            else terminate = true;
         }
     };
 }
