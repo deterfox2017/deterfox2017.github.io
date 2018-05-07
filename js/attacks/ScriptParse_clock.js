@@ -44,8 +44,9 @@ function doScriptParse(index)
             timeofsp.push(duration);
             doScriptParse(index);
         }else{
-            timeofsp.sort(sortNumber);
-            timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            //timeofsp.sort(sortNumber);
+            //timesofsp.push([index*1.2,timeofsp[Math.floor(timeofsp.length/2)]]);
+            timesofsp.push(timeofsp.reduce(function(a, b) { return a + b; })/timeofsp.length);
             timeofsp = [];
             sizes.push(index);
             current = 0;
